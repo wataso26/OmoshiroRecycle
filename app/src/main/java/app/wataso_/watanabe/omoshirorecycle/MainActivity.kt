@@ -13,8 +13,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //投稿ボタンを押した時に画面が遷移する
         tokoButton.setOnClickListener {
-
             val toTokoActivityIntent = Intent(this,Toko::class.java)
             startActivity(toTokoActivityIntent)
         }

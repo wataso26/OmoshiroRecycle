@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="80dp">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/contentTextView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:gravity="center_vertical"
+                android:text="内容"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/dateTextView"
+                android:layout_width="326dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:text="2019/11/20 12:00:00" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="38dp"
+                android:layout_height="42dp"
+                android:background="@drawable/enpitu"
+                android:backgroundTint="#005731"
+                android:backgroundTintMode="add" />
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="44dp"
+                android:layout_height="37dp"
+                android:background="@drawable/gomibako"
+                android:backgroundTint="#7d7d7d"
+                android:text="Button" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
