@@ -41,6 +41,6 @@ class DataAdapter(
         val genreTextView: TextView = view.genreTextView
         val contentTextView: TextView = view.contentTextView
         val dateTextView: TextView = view.dateTextView
-    }sss
+    }
 
 }
