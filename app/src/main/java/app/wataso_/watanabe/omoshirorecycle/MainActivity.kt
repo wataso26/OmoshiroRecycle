@@ -1,5 +1,4 @@
 package app.wataso_.watanabe.omoshirorecycle
-
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -21,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private var page =1
     private var mainAdapter :MainAdapter? =null
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -37,30 +37,6 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = mainAdapter
 
 
-        //20行追加する
-        fun createRowData(page: Int): List<RowData> {
-            val dataSet: MutableList<RowData>
-            dataSet = ArrayList()
-            var i = 1
-            while (i < page * 20) {
-                val data = RowData()
-                data.hogeTitle = "hogeTitle" + Integer.toString(i)
-                data.hogeContents = "hogeContents" + Integer.toString(i)
-                val add = dataSet.add(data)
-                i += 1
-            }
-            return dataSet
-        }
-
-        //一行分のデータ
-
-        inner class RowData {
-            var hogeTitle: String? = null
-            var hogeContents: String? = null
-        }
-
-
-
         //投稿ボタンを押した時に画面が遷移する
         tokoButton.setOnClickListener {
             val toTokoActivityIntent = Intent(this,Toko::class.java)
@@ -68,4 +44,26 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    private fun createRowData(page: Int): List<RowData> {
+        val dataSet: MutableList<RowData> = ArrayList()
+        var i = 1
+        while (i < page * 20) {
+            val data = RowData()
+            data.hogeTitle = "hogeTitle" + Integer.toString(i)
+            data.hogeContents = "hogeContents" + Integer.toString(i)
+            val add = dataSet.add(data)
+            i += 1
+        }
+        return dataSet
+    }
+        //20行追加する
+
+
+        //一行分のデータ
+
+    inner class RowData {
+        var hogeTitle: String? = null
+        var hogeContents: String? = null
+    }
+
 }
