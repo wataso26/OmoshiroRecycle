@@ -82,6 +82,7 @@
     </HorizontalScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_recycler_view"
         android:layout_width="408dp"
         android:layout_height="682dp"
         app:layout_constraintBottom_toBottomOf="parent"
