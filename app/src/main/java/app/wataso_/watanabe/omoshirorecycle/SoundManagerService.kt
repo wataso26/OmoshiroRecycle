@@ -40,19 +40,19 @@ class SoundManagerService : Service() {
     private inner class PlayCompletionListener :MediaPlayer.OnCompletionListener{
         override fun onCompletion(mp:MediaPlayer){
             //builderクラスを作成する
-            val builder =NotificationCompat.Builder(this@SoundManagerService, CHANEL_ID)
+            //val builder =NotificationCompat.Builder(this@SoundManagerService, CHANEL_ID)
             //通知エリアに表示されるアイコンを設定
-            builder.setSmallIcon(R.drawable.ic_dialog_info)
+            //builder.setSmallIcon(R.drawable.ic_dialog_info)
             //通知ドロワーでの表示タイトルを設定
-            builder.setContentTitle("お知らせ")
+            //builder.setContentTitle("お知らせ")
             //通知ドロワーでの表示メッセージを設定
-            builder.setContentText("思い出を振り返りませんか？")
+            //builder.setContentText("思い出を振り返りませんか？")
             //builderからnotificationオブジェクト
-            val notification = builder.build()
+            //val notification = builder.build()
             //notificationmanagercompatオブジェクトを取得
             val manager = NotificationManagerCompat.from(this@SoundManagerService)
             //通知
-            manager.notify(100,notification)
+            //manager.notify(100,notification)
             //仮　音楽が止まる
             stopSelf()
         }

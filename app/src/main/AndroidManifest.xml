@@ -13,13 +13,11 @@
         <service
             android:name=".SoundManagerService"
             android:enabled="true"
-            android:exported="false"></service>
-        <service
-            android:name=".MyService"
-            android:enabled="true"
-            android:exported="false" />
+            android:exported="false"/>
+
 
         <activity android:name=".Toko" />
+        <activity android:name=".TimePickerDialogActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

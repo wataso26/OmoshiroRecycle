@@ -43,6 +43,11 @@ class MainActivity : AppCompatActivity() {
             val toTokoActivityIntent = Intent(this,Toko::class.java)
             startActivity(toTokoActivityIntent)
         }
+        //設定ボタンを押した時に画面が遷移する
+        settingButton.setOnClickListener {
+            val toSettingActivityIntent = Intent(this,TimePickerDialogActivity::class.java)
+            startActivity(toSettingActivityIntent)
+        }
 
     }
     private fun createRowData(page: Int): List<RowData> {
