@@ -16,7 +16,7 @@ class TimePickerDialogActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.setting)
 
-        text_et = findViewById<EditText>(R.id.text_et)              //EditText（入力エリア）
+        text_et = findViewById<EditText>(R.id.text_et) //一応
 
         //EditTextのクリックイベントを設定
         text_et.setOnClickListener {
@@ -25,7 +25,7 @@ class TimePickerDialogActivity : AppCompatActivity() {
 
     }
 
-    /* 時間ダーダイアログを開くためのメソッド */
+    //時間ダーダイアログを開くためのメソッド
     fun showTimePickerDialog() {
         val calendar: Calendar = Calendar.getInstance()
 
@@ -33,11 +33,11 @@ class TimePickerDialogActivity : AppCompatActivity() {
         val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
             cal.set(Calendar.HOUR_OF_DAY, hour)
             cal.set(Calendar.MINUTE, minute)
-            //EditTextに選択された時間を設定
+            //EditTextに選択された時間を設定する処理
             text_et.setText(SimpleDateFormat("HH:mm").format(cal.time))
         }
 
-        //タイムピッカーダイアログを生成および設定
+        //タイムピッカーダイアログを生成
         TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
     }
 

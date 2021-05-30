@@ -49,7 +49,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(toSettingActivityIntent)
         }
 
+
     }
+
+
     private fun createRowData(page: Int): List<RowData> {
         val dataSet: MutableList<RowData> = ArrayList()
         var i = 1
