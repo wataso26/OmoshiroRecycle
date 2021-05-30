@@ -2,6 +2,7 @@ package app.wataso_.watanabe.omoshirorecycle
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.realm.Realm
@@ -64,6 +65,11 @@ class MainActivity : AppCompatActivity() {
     inner class RowData {
         var hogeTitle: String? = null
         var hogeContents: String? = null
+    }
+    // アクションバーに追加
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_options_menu_list,menu)
+        return true
     }
 
 }
