@@ -1,26 +1,38 @@
 package app.wataso_.watanabe.omoshirorecycle
 
-import android.app.DatePickerDialog
+import android.app.AlertDialog
+import android.app.Dialog
+import android.app.PendingIntent.getActivity
 import android.app.TimePickerDialog
-import androidx.appcompat.app.AppCompatActivity
+import android.content.DialogInterface
 import android.os.Bundle
-import android.widget.*
+import android.widget.EditText
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.setting.*
 import java.text.SimpleDateFormat
 import java.util.*
 
 class TimePickerDialogActivity : AppCompatActivity() {
 
     lateinit var text_et: EditText
+    lateinit var yobi_ad: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.setting)
 
         text_et = findViewById<EditText>(R.id.text_et) //一応
-
+        yobi_ad = findViewById<EditText>(R.id.yobi_ad)
         //EditTextのクリックイベントを設定
         text_et.setOnClickListener {
             showTimePickerDialog()
+
+        }
+        //yobi_adがクリックされた時にアラートダイアログが出るようにする
+        yobi_ad.setOnClickListener {
+            var dialog = CustomDialogFragment()
+
+            dialog.show(supportFragmentManager,"customDialog")
         }
 
     }
@@ -40,5 +52,6 @@ class TimePickerDialogActivity : AppCompatActivity() {
         //タイムピッカーダイアログを生成
         TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
     }
+
 
 }
