@@ -6,6 +6,7 @@ import android.app.PendingIntent.getActivity
 import android.app.TimePickerDialog
 import android.content.DialogInterface
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.setting.*
@@ -15,15 +16,17 @@ import java.util.*
 class TimePickerDialogActivity : AppCompatActivity() {
 
     lateinit var text_et: EditText
-    lateinit var yobi_ad: EditText
+    lateinit var yobi_ad: Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.setting)
 
         text_et = findViewById<EditText>(R.id.text_et) //一応
-        yobi_ad = findViewById<EditText>(R.id.yobi_ad)
-        //EditTextのクリックイベントを設定
+        yobi_ad = findViewById<Button>(R.id.yobi_ad)
+
+        //EditTextのクリックイベントを設定(タイムピッカー)
         text_et.setOnClickListener {
             showTimePickerDialog()
 
@@ -37,7 +40,7 @@ class TimePickerDialogActivity : AppCompatActivity() {
 
     }
 
-    //時間ダーダイアログを開くためのメソッド
+    //時間ダイアログを開くためのメソッド
     fun showTimePickerDialog() {
         val calendar: Calendar = Calendar.getInstance()
 

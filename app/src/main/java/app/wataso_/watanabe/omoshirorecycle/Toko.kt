@@ -13,6 +13,9 @@ class Toko : AppCompatActivity() {
     val readRequestCode: Int=42
     lateinit var galleryButton: Button
 
+    //genreAlertDialogの設定
+    lateinit var genre_ad : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_toko)
@@ -26,9 +29,14 @@ class Toko : AppCompatActivity() {
 
             //galleryButton = findViewById(R.id.galleryButton)
 
+        }
+        //genreAlertDialogの設定
+        genre_ad = findViewById<Button>(R.id.genre_ad)
+        //genreAlertDialogがボタンが押された時に表示されるようにする
+        genre_ad.setOnClickListener {
+            var dialog = GenreCustomDialogFragment()
 
-
-
+            dialog.show(supportFragmentManager,"customDialog")
         }
     }
     //遷移先のアクティビティから結果を受け取る

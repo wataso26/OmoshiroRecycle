@@ -7,30 +7,28 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
-import kotlinx.android.synthetic.main.franment_custom_dialog.*
-import kotlinx.android.synthetic.main.franment_custom_dialog.view.*
-import kotlinx.android.synthetic.main.setting.*
+import kotlinx.android.synthetic.main.genre_fragment_custom_dialog.*
+import kotlinx.android.synthetic.main.genre_fragment_custom_dialog.view.*
+import kotlinx.android.synthetic.main.toko.*
 
-class CustomDialogFragment:DialogFragment() {
+class GenreCustomDialogFragment:DialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var rootView: View = inflater.inflate(R.layout.franment_custom_dialog,container,false)
+        var rootView: View = inflater.inflate(R.layout.genre_fragment_custom_dialog,container,false)
 
-        rootView.cancel_button.setOnClickListener {
+        rootView.genre_cancel_button.setOnClickListener {
             dismiss()
         }
-        rootView.submitButton.setOnClickListener {
-            val selectedID =ratingRadioGroup.checkedRadioButtonId
+        rootView.genre_submitButton.setOnClickListener {
+            val selectedID =radioGroup.checkedRadioButtonId
             val radio = rootView.findViewById<RadioButton>(selectedID)
 
             var ratingResult = radio.text.toString()
 
             Toast.makeText(context,"You rated: $ratingResult",Toast.LENGTH_LONG).show()
 
-            dismiss()
-            //テキストビューに選択した曜日を表示
-            textView6.text = radio.text.toString()
-
+            dismiss()//参考
+            genre_textView.text = radio.text.toString()
         }
 
         return rootView

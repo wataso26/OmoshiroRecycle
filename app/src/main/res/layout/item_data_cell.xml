@@ -56,8 +56,7 @@
             android:layout_width="44dp"
             android:layout_height="37dp"
             android:background="@drawable/gomibako"
-            android:backgroundTint="#7d7d7d"
-            android:text="Button" />
+            android:backgroundTint="#7d7d7d" />
 
         <Button
             android:id="@+id/button7"
