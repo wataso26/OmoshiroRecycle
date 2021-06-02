@@ -14,10 +14,7 @@
             android:name=".SoundManagerService"
             android:enabled="true"
             android:exported="false"/>
-
-
         <activity android:name=".Toko" />
-
         <activity android:name=".TimePickerDialogActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>

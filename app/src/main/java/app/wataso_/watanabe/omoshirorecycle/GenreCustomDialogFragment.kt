@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.genre_fragment_custom_dialog.*
 import kotlinx.android.synthetic.main.genre_fragment_custom_dialog.view.*
+import kotlinx.android.synthetic.main.item_data_cell.*
 import kotlinx.android.synthetic.main.toko.*
 
 class GenreCustomDialogFragment:DialogFragment() {
@@ -28,9 +29,16 @@ class GenreCustomDialogFragment:DialogFragment() {
             Toast.makeText(context,"You rated: $ratingResult",Toast.LENGTH_LONG).show()
 
             dismiss()//参考
-            genre_textView.text = radio.text.toString()
+
         }
 
         return rootView
+
+    }
+    override fun onCreateView(){
+        val selectedID =radioGroup.checkedRadioButtonId
+        val radio = rootView.findViewById<RadioButton>(selectedID)
+
+        genre_textView.text = radio.text.toString()
     }
 }
