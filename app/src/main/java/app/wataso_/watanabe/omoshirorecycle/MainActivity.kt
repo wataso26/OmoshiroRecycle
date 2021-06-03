@@ -3,12 +3,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import io.realm.Realm
 import io.realm.RealmResults
 import io.realm.Sort
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.setting.*
 import java.net.URI.create
 import java.util.*
 
@@ -43,17 +45,26 @@ class MainActivity : AppCompatActivity() {
             val toTokoActivityIntent = Intent(this,Toko::class.java)
             startActivity(toTokoActivityIntent)
         }
-        //設定ボタンを押した時に画面が遷移する
-        settingButton.setOnClickListener {
-            val toSettingActivityIntent = Intent(this,TimePickerDialogActivity::class.java)
-            startActivity(toSettingActivityIntent)
-        }
 
 
 
     }
+    //オーバーフローメニューを押した時に画面が遷移する
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
+        var returnVal = true
+        val toSettingActivityIntent = Intent(this,TimePickerDialogActivity::class.java)
 
+        when(item.itemId){
+            R.id.MenuSetting->
+
+                startActivity(toSettingActivityIntent)
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    //リサイクルラビューを使ってみる
     private fun createRowData(page: Int): List<RowData> {
         val dataSet: MutableList<RowData> = ArrayList()
         var i = 1
