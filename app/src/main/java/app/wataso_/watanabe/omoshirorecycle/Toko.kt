@@ -4,13 +4,16 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import android.widget.RadioButton
+import kotlinx.android.synthetic.main.item_data_cell.*
 import kotlinx.android.synthetic.main.toko.*
 
 class Toko : AppCompatActivity() {
 
     val readRequestCode: Int=42
-    lateinit var galleryButton: Button
+
 
     //genreAlertDialogの設定
     lateinit var genre_ad : Button
@@ -19,6 +22,7 @@ class Toko : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.toko)
 
+        //galleryButtonクリック時にギャラリーを開く
         galleryButton.setOnClickListener {
             val galleryIntent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             galleryIntent.addCategory(Intent.CATEGORY_OPENABLE)
@@ -26,7 +30,6 @@ class Toko : AppCompatActivity() {
             galleryIntent.type = "image/*"
             startActivityForResult(galleryIntent, readRequestCode)
 
-            galleryButton = findViewById(R.id.galleryButton)
 
         }
         //genreAlertDialogの設定
@@ -36,15 +39,18 @@ class Toko : AppCompatActivity() {
             var dialog = GenreCustomDialogFragment()
 
             dialog.show(supportFragmentManager,"customDialog")
+
         }
+
     }
-    //遷移先のアクティビティから結果を受け取る
+    //遷移先のアクティビティから結果を受け取る 画像取得
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
         super.onActivityResult(requestCode, resultCode, resultData)
 
         if (requestCode == readRequestCode && resultCode == Activity.RESULT_OK){
             resultData?.data.also{ uri ->
                 imageView.setImageURI(uri)
+
             }
         }
     }

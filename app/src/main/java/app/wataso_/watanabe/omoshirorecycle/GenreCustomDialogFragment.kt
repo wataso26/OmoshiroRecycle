@@ -35,10 +35,5 @@ class GenreCustomDialogFragment:DialogFragment() {
         return rootView
 
     }
-    override fun onCreateView(){
-        val selectedID =radioGroup.checkedRadioButtonId
-        val radio = rootView.findViewById<RadioButton>(selectedID)
 
-        genre_textView.text = radio.text.toString()
-    }
 }

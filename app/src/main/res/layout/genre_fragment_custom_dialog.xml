@@ -27,26 +27,31 @@
         app:layout_constraintTop_toTopOf="@+id/headerTextView">
 
         <RadioButton
+            android:id="@+id/genre1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="日常" />
 
         <RadioButton
+            android:id="@+id/genre2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="テレビ・コント" />
 
         <RadioButton
+            android:id="@+id/genre3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="フレーズ" />
 
         <RadioButton
+            android:id="@+id/genre4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="写真で一言" />
 
         <RadioButton
+            android:id="@+id/genre5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="フリースタイル" />
