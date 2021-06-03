@@ -8,13 +8,18 @@
 
     <Button
         android:id="@+id/tokoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
-        android:text="投稿"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="56dp"
+        android:background="@drawable/backgroung_circle"
+        android:text="+"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:backgroundTint="#22c853"
+        app:iconTint="#00B62F2F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent" />
 
     <HorizontalScrollView
@@ -87,7 +92,9 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
