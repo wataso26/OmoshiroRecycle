@@ -27,7 +27,7 @@ class CustomDialogFragment:DialogFragment() {
 
             var ratingResult = radio.text.toString()
 
-            Toast.makeText(context,"You rated: $ratingResult",Toast.LENGTH_LONG).show()
+            Toast.makeText(context,"You chose $ratingResult",Toast.LENGTH_LONG).show()
 
             dismiss()
             //テキストビューに選択した曜日を表示

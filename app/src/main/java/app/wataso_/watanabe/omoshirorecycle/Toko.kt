@@ -7,11 +7,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.RadioButton
+import androidx.activity.viewModels
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.item_data_cell.*
 import kotlinx.android.synthetic.main.toko.*
-
+@AndroidEntryPoint
 class Toko : AppCompatActivity() {
-
+    //private val vm: CreateToDoViewModel by viewModels()
     val readRequestCode: Int=42
 
 

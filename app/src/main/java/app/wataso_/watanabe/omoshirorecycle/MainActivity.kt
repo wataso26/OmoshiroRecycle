@@ -6,19 +6,16 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import io.realm.Realm
-import io.realm.RealmResults
-import io.realm.Sort
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.setting.*
 import java.net.URI.create
 import java.util.*
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     //realmの定義
-    private val realm: Realm by lazy {
-        Realm.getDefaultInstance()
-    }
+
     //recyclerView
     private var page =1
     private var mainAdapter :MainAdapter? =null

@@ -10,17 +10,17 @@
         android:id="@+id/tokoButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/backgroung_circle"
+        android:gravity="center|top"
         android:text="+"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="30dp"
         app:backgroundTint="#22c853"
         app:iconTint="#00B62F2F"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.911"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
