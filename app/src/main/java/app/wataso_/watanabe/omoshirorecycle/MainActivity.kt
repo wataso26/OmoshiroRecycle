@@ -45,9 +45,10 @@ class MainActivity : AppCompatActivity() {
                 override fun onItemClick(item: Task) {
                     // クリック時の処理
                     Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
-                    delete(item.id)
+
                 }
             }, true)
+
 
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)

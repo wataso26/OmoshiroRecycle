@@ -21,7 +21,7 @@ import java.util.*
 class TaskAdapter(
     private val context: Context,
     private var taskList: OrderedRealmCollection<Task>?,
-    private var listener: AdapterView.OnItemClickListener,//追加
+    private var listener: OnItemClickListener,//追加
     private val autoUpdate: Boolean
 ) :
     RealmRecyclerViewAdapter<Task, TaskAdapter.TaskViewHolder>(taskList, autoUpdate) {
@@ -60,3 +60,4 @@ class TaskAdapter(
     }
 
 }
+

@@ -7,10 +7,16 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.RadioButton
+import io.realm.Realm
 import kotlinx.android.synthetic.main.item_data_cell.*
 import kotlinx.android.synthetic.main.toko.*
 
 class Toko : AppCompatActivity() {
+
+    //realmの追加
+    private val realm: Realm by lazy {
+        Realm.getDefaultInstance()
+    }
 
     val readRequestCode: Int=42
 
