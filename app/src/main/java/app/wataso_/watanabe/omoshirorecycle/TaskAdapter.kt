@@ -19,12 +19,12 @@ import kotlinx.android.synthetic.main.toko.view.*
 import java.util.*
 
 class TaskAdapter(
-    private val context: Context,
-    private var taskList: OrderedRealmCollection<Task>?,
-    private var listener: OnItemClickListener,//追加
-    private val autoUpdate: Boolean
+        private val context: Context,
+        private var taskList: OrderedRealmCollection<Task>?,
+        private var listener: OnItemClickListener,//追加
+        private val autoUpdate: Boolean
 ) :
-    RealmRecyclerViewAdapter<Task, TaskAdapter.TaskViewHolder>(taskList, autoUpdate) {
+        RealmRecyclerViewAdapter<Task, TaskAdapter.TaskViewHolder>(taskList, autoUpdate) {
 
     override fun getItemCount(): Int = taskList?.size ?: 0
 
@@ -39,7 +39,7 @@ class TaskAdapter(
         //holder.imageView.setImageResource(task.imageId)
         holder.contentTextView.text = task.content
         holder.dateTextView.text =
-            SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.JAPANESE).format(task.createdAt)
+                SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.JAPANESE).format(task.createdAt)
 
     }
 

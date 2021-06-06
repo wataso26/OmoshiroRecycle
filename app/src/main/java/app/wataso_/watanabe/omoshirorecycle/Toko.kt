@@ -1,22 +1,19 @@
 package app.wataso_.watanabe.omoshirorecycle
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
+import android.icu.text.CaseMap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
-import android.widget.RadioButton
 import io.realm.Realm
-import kotlinx.android.synthetic.main.item_data_cell.*
 import kotlinx.android.synthetic.main.toko.*
 
 class Toko : AppCompatActivity() {
 
     //realmの追加
-    private val realm: Realm by lazy {
-        Realm.getDefaultInstance()
-    }
+    val realm:Realm =Realm.getDefaultInstance()
 
     val readRequestCode: Int=42
 
@@ -27,6 +24,20 @@ class Toko : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.toko)
+
+        val task: Task? =read()
+        //edittextに取得したデータを入れる
+        if (task !=null){
+            titleEditText.setText(task.title)
+            contentEditText.setText(task.content)
+        }
+        saveButton.setOnClickListener {
+            val title: String = titleEditText.text.toString()
+            val content: String = contentEditText.text.toString()
+            save(title,content)
+        }
+
+
 
         //galleryButtonクリック時にギャラリーを開く
         galleryButton.setOnClickListener {
@@ -42,10 +53,25 @@ class Toko : AppCompatActivity() {
         genre_ad = findViewById<Button>(R.id.genre_ad)
         //genreAlertDialogがボタンが押された時に表示されるようにする
         genre_ad.setOnClickListener {
-            var dialog = GenreCustomDialogFragment()
+            val strList = arrayOf("日常","テレビ・コント","フレーズ","写真で一言","フリースタイル")
 
-            dialog.show(supportFragmentManager,"customDialog")
+            AlertDialog.Builder(this) // FragmentではActivityを取得して生成
+                    .setTitle("ラジオボタン選択ダイアログ")
 
+                    .setSingleChoiceItems(strList, 0, { dialog, which ->
+                        genre_textView.text = strList[0]
+                    })
+                    .setSingleChoiceItems(strList, 1, { dialog, which ->
+                        genre_textView.text = strList[1]
+                    })
+                    .setSingleChoiceItems(strList, 3, { dialog, which ->
+                        genre_textView.text = strList[3]
+
+                    })
+                    .setPositiveButton("OK", { dialog, which ->
+
+                    })
+                    .show()
         }
 
     }
@@ -60,4 +86,30 @@ class Toko : AppCompatActivity() {
             }
         }
     }
+    //realm画面終了時
+    override fun onDestroy() {
+        super.onDestroy()
+        realm.close()
+    }
+    //画面起動時
+    fun read(): Task?{
+        return realm.where(Task::class.java).findFirst()
+    }
+    fun save(title:String,content: String){
+        //保存機能
+        val task:Task? = read()
+
+        realm.executeTransaction {
+            if(task !=null){
+                task.title=title
+                task.content=content
+            }else{
+                //メモの新規作成
+                val newTask: Task =it.createObject(Task::class.java)
+                newTask.title =title
+                newTask.content =content
+            }
+        }
+    }
+
 }

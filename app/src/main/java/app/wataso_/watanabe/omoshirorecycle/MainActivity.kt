@@ -12,6 +12,7 @@ import io.realm.RealmResults
 import io.realm.Sort
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.setting.*
+import kotlinx.android.synthetic.main.toko.*
 import java.net.URI.create
 import java.nio.file.Files.delete
 import java.util.*
@@ -19,13 +20,12 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     //realmの定義
-    private val realm: Realm by lazy {
-        Realm.getDefaultInstance()
-    }
+
+
+    //realm
+    val realm:Realm =Realm.getDefaultInstance()
+
     //recyclerView
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
     //以下はtaskリサイクルヴューの記述
     fun createDummyData() {
         for (i in 0..10) {
-            create(R.drawable.ic_launcher_background, "思い出 $i")
+            create(R.drawable.ic_launcher_background, " $i")
         }
     }
 
@@ -143,5 +143,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
 }
+
+
 
