@@ -59,17 +59,10 @@ class Toko : AppCompatActivity() {
                     .setTitle("ラジオボタン選択ダイアログ")
 
                     .setSingleChoiceItems(strList, 0, { dialog, which ->
-                        genre_textView.text = strList[0]
+                        genre_textView.text=strList[which]
                     })
-                    .setSingleChoiceItems(strList, 1, { dialog, which ->
-                        genre_textView.text = strList[1]
-                    })
-                    .setSingleChoiceItems(strList, 3, { dialog, which ->
-                        genre_textView.text = strList[3]
 
-                    })
                     .setPositiveButton("OK", { dialog, which ->
-
                     })
                     .show()
         }
