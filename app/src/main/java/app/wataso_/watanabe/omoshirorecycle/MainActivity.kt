@@ -81,13 +81,18 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item);
     }
+    //アクションバーに追加
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_options_menu_list,menu)
+        return true
+    }
 
 
 
     //以下はtaskリサイクルヴューの記述
     fun createDummyData() {
         for (i in 0..10) {
-            create(R.drawable.ic_launcher_background, "やること $i")
+            create(R.drawable.ic_launcher_background, "思い出 $i")
         }
     }
 

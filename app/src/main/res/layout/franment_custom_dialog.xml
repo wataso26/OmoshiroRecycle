@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="36dp"
         android:backgroundTint="#EC407A"
-        android:text="Cancel"
+        android:text="取り消し"
         android:textColor="#ffff"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingRadioGroup" />
@@ -80,14 +80,12 @@
         android:id="@+id/submitButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Submit"
-        android:backgroundTint="#26C6DA"
-        android:textColor="#fff"
-        app:layout_constraintTop_toBottomOf="@+id/ratingRadioGroup"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="25dp"
-        />
+        android:backgroundTint="#26C6DA"
+        android:text="確定！"
+        android:textColor="#fff"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ratingRadioGroup" />
 
 
 
