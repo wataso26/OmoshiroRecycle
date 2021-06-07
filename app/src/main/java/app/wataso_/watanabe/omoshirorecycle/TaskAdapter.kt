@@ -37,6 +37,7 @@ class TaskAdapter(
         }
 
         //holder.imageView.setImageResource(task.imageId)
+        holder.genreTextView.text =task.title
         holder.contentTextView.text = task.content
         holder.dateTextView.text =
                 SimpleDateFormat("yyyy/MM/dd HH:mm:ss", Locale.JAPANESE).format(task.createdAt)
@@ -51,6 +52,7 @@ class TaskAdapter(
     class TaskViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         //val imageView: ImageView = view.imageView
         val container : LinearLayout = view.container
+        val genreTextView : TextView = view.genreTextView
         val contentTextView: TextView = view.contentTextView
         val dateTextView: TextView = view.dateTextView
     }

@@ -7,8 +7,13 @@ import android.icu.text.CaseMap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
 import io.realm.Realm
+import io.realm.RealmResults
+import io.realm.Sort
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toko.*
+import java.util.*
 
 class Toko : AppCompatActivity() {
 
@@ -28,11 +33,11 @@ class Toko : AppCompatActivity() {
         val task: Task? =read()
         //edittextに取得したデータを入れる
         if (task !=null){
-            titleEditText.setText(task.title)
+            genre_textView.setText(task.title)
             contentEditText.setText(task.content)
         }
         saveButton.setOnClickListener {
-            val title: String = titleEditText.text.toString()
+            val title: String = genre_textView.text.toString()
             val content: String = contentEditText.text.toString()
             save(title,content)
         }
@@ -61,11 +66,33 @@ class Toko : AppCompatActivity() {
                     .setSingleChoiceItems(strList, 0, { dialog, which ->
                         genre_textView.text=strList[which]
                     })
-
                     .setPositiveButton("OK", { dialog, which ->
                     })
                     .show()
         }
+        //保存ボタンを押した時に画面遷移する
+        saveButton.setOnClickListener {
+            val toMainActivityIntent = Intent(this,MainActivity::class.java)
+            startActivity(toMainActivityIntent)
+            createDummyData()
+        }
+        //以下はtaskリサイクルヴューの記述
+        val taskList = readAll()
+
+
+        val adapter =
+                TaskAdapter(this, taskList, object : TaskAdapter.OnItemClickListener {
+                    override fun onItemClick(item: Task) {
+                        // クリック時の処理
+                        //Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
+                        //delete(item.id)
+                    }
+                }, true)
+
+
+        //recyclerView.setHasFixedSize(true)
+        //recyclerView.layoutManager = LinearLayoutManager(this)
+        //recyclerView.adapter = adapter
 
     }
     //遷移先のアクティビティから結果を受け取る 画像取得
@@ -102,6 +129,59 @@ class Toko : AppCompatActivity() {
                 newTask.title =title
                 newTask.content =content
             }
+        }
+    }
+    fun createDummyData() {
+        create(R.drawable.ic_launcher_background, "","")
+
+    }
+    //以下はtaskリサイクルヴューの記述
+    fun create(imageId: Int, content: String,title: String) {
+        realm.executeTransaction {
+            val task = it.createObject(Task::class.java, UUID.randomUUID().toString())
+            task.imageId = imageId
+            task.content = content
+            task.title =title
+        }
+    }
+    fun readAll(): RealmResults<Task> {
+        return realm.where(Task::class.java).findAll().sort("createdAt", Sort.ASCENDING)
+    }
+
+    //アイテムを削除する方法
+    fun update(id: String, content: String,title: String) {
+        realm.executeTransaction {
+            val task = realm.where(Task::class.java).equalTo("id", id).findFirst()
+                    ?: return@executeTransaction
+            task.content = content
+            task.title =title
+        }
+    }
+
+    fun update(task: Task, content: String,title: String) {
+        realm.executeTransaction {
+            task.content = content
+            task.title =title
+        }
+    }
+
+    fun delete(id: String) {
+        realm.executeTransaction {
+            val task = realm.where(Task::class.java).equalTo("id", id).findFirst()
+                    ?: return@executeTransaction
+            task.deleteFromRealm()
+        }
+    }
+
+    fun delete(task: Task) {
+        realm.executeTransaction {
+            task.deleteFromRealm()
+        }
+    }
+
+    fun deleteAll() {
+        realm.executeTransaction {
+            realm.deleteAll()
         }
     }
 

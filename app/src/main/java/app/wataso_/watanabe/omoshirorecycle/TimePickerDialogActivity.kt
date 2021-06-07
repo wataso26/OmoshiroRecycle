@@ -22,12 +22,11 @@ class TimePickerDialogActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.setting)
-
-        text_et = findViewById<EditText>(R.id.text_et) //一応
+        //一応
         yobi_ad = findViewById<Button>(R.id.yobi_ad)
 
         //EditTextのクリックイベントを設定(タイムピッカー)
-        text_et.setOnClickListener {
+        button7.setOnClickListener {
             showTimePickerDialog()
 
         }
@@ -49,7 +48,7 @@ class TimePickerDialogActivity : AppCompatActivity() {
             cal.set(Calendar.HOUR_OF_DAY, hour)
             cal.set(Calendar.MINUTE, minute)
             //EditTextに選択された時間を設定する処理
-            text_et.setText(SimpleDateFormat("HH:mm").format(cal.time))
+            textView5.setText(SimpleDateFormat("HH:mm").format(cal.time))
         }
 
         //タイムピッカーダイアログを生成
