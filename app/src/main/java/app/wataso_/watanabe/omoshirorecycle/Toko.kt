@@ -71,11 +71,11 @@ class Toko : AppCompatActivity() {
                     .show()
         }
         //保存ボタンを押した時に画面遷移する
-        saveButton.setOnClickListener {
+        //saveButton.setOnClickListener {
             val toMainActivityIntent = Intent(this,MainActivity::class.java)
-            startActivity(toMainActivityIntent)
+            //startActivity(toMainActivityIntent)
             createDummyData()
-        }
+        //}
         //以下はtaskリサイクルヴューの記述
         val taskList = readAll()
 
@@ -90,7 +90,7 @@ class Toko : AppCompatActivity() {
                 }, true)
         //recyclerView.setHasFixedSize(true)
         //recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
+        //recyclerView.adapter = adapter
 
     }
     //遷移先のアクティビティから結果を受け取る 画像取得
@@ -144,43 +144,6 @@ class Toko : AppCompatActivity() {
     }
     fun readAll(): RealmResults<Task> {
         return realm.where(Task::class.java).findAll().sort("createdAt", Sort.ASCENDING)
-    }
-
-    //アイテムを削除する方法
-    fun update(id: String, content: String,title: String) {
-        realm.executeTransaction {
-            val task = realm.where(Task::class.java).equalTo("id", id).findFirst()
-                    ?: return@executeTransaction
-            task.content = content
-            task.title =title
-        }
-    }
-
-    fun update(task: Task, content: String,title: String) {
-        realm.executeTransaction {
-            task.content = content
-            task.title =title
-        }
-    }
-
-    fun delete(id: String) {
-        realm.executeTransaction {
-            val task = realm.where(Task::class.java).equalTo("id", id).findFirst()
-                    ?: return@executeTransaction
-            task.deleteFromRealm()
-        }
-    }
-
-    fun delete(task: Task) {
-        realm.executeTransaction {
-            task.deleteFromRealm()
-        }
-    }
-
-    fun deleteAll() {
-        realm.executeTransaction {
-            realm.deleteAll()
-        }
     }
 
 }

@@ -51,11 +51,6 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
-
-
-
-
-
         //投稿ボタンを押した時に画面が遷移する
         tokoButton.setOnClickListener {
             val toTokoActivityIntent = Intent(this,Toko::class.java)
@@ -86,8 +81,6 @@ class MainActivity : AppCompatActivity() {
 
 
     //以下はtaskリサイクルヴューの記述
-
-
     fun create(imageId: Int, content: String,title: String) {
         realm.executeTransaction {
             val task = it.createObject(Task::class.java, UUID.randomUUID().toString())
@@ -125,19 +118,6 @@ class MainActivity : AppCompatActivity() {
             task.deleteFromRealm()
         }
     }
-
-    fun delete(task: Task) {
-        realm.executeTransaction {
-            task.deleteFromRealm()
-        }
-    }
-
-    fun deleteAll() {
-        realm.executeTransaction {
-            realm.deleteAll()
-        }
-    }
-
 
 }
 
