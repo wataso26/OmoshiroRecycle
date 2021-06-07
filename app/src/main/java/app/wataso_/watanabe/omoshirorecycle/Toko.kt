@@ -88,8 +88,9 @@ class Toko : AppCompatActivity() {
                         //delete(item.id)
                     }
                 }, true)
-
-
+        //recyclerView.setHasFixedSize(true)
+        //recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
 
     }
     //遷移先のアクティビティから結果を受け取る 画像取得
