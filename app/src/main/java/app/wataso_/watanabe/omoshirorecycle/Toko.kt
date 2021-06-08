@@ -17,11 +17,12 @@ import java.util.*
 
 class Toko : AppCompatActivity() {
 
+
+
     //realmの追加
     val realm:Realm =Realm.getDefaultInstance()
 
     val readRequestCode: Int=42
-
 
     //genreAlertDialogの設定
     lateinit var genre_ad : Button
@@ -29,20 +30,15 @@ class Toko : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.toko)
+        createDummyData()
 
-        val task: Task? =read()
         //edittextに取得したデータを入れる
-        if (task !=null){
-            genre_textView.setText(task.title)
-            contentEditText.setText(task.content)
-        }
+
         saveButton.setOnClickListener {
             val title: String = genre_textView.text.toString()
             val content: String = contentEditText.text.toString()
             save(title,content)
         }
-
-
 
         //galleryButtonクリック時にギャラリーを開く
         galleryButton.setOnClickListener {
@@ -51,7 +47,6 @@ class Toko : AppCompatActivity() {
             //タイプを指定している
             galleryIntent.type = "image/*"
             startActivityForResult(galleryIntent, readRequestCode)
-
 
         }
         //genreAlertDialogの設定
@@ -70,27 +65,6 @@ class Toko : AppCompatActivity() {
                     })
                     .show()
         }
-        //保存ボタンを押した時に画面遷移する
-        //saveButton.setOnClickListener {
-            val toMainActivityIntent = Intent(this,MainActivity::class.java)
-            //startActivity(toMainActivityIntent)
-            createDummyData()
-        //}
-        //以下はtaskリサイクルヴューの記述
-        val taskList = readAll()
-
-
-        val adapter =
-                TaskAdapter(this, taskList, object : TaskAdapter.OnItemClickListener {
-                    override fun onItemClick(item: Task) {
-                        // クリック時の処理
-                        //Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
-                        //delete(item.id)
-                    }
-                }, true)
-        //recyclerView.setHasFixedSize(true)
-        //recyclerView.layoutManager = LinearLayoutManager(this)
-        //recyclerView.adapter = adapter
 
     }
     //遷移先のアクティビティから結果を受け取る 画像取得
@@ -113,20 +87,15 @@ class Toko : AppCompatActivity() {
     fun read(): Task?{
         return realm.where(Task::class.java).findFirst()
     }
-    fun save(title:String,content: String){
+    fun save(title:String,content: String) {
         //保存機能
-        val task:Task? = read()
-
+        val task: Task? = read()
         realm.executeTransaction {
-            if(task !=null){
-                task.title=title
-                task.content=content
-            }else{
                 //メモの新規作成
-                val newTask: Task =it.createObject(Task::class.java)
-                newTask.title =title
-                newTask.content =content
-            }
+                val newTask: Task = it.createObject(Task::class.java)
+                newTask.title = title
+                newTask.content = content
+
         }
     }
     fun createDummyData() {
@@ -141,9 +110,6 @@ class Toko : AppCompatActivity() {
             task.content = content
             task.title =title
         }
-    }
-    fun readAll(): RealmResults<Task> {
-        return realm.where(Task::class.java).findAll().sort("createdAt", Sort.ASCENDING)
     }
 
 }
