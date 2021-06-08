@@ -21,7 +21,7 @@ import java.util.*
 class TaskAdapter(
         private val context: Context,
         private var taskList: OrderedRealmCollection<Task>?,
-        private var listener: OnItemClickListener,//追加
+        private var listener: OnItemLongClickListener,//追加
         private val autoUpdate: Boolean
 ) :
         RealmRecyclerViewAdapter<Task, TaskAdapter.TaskViewHolder>(taskList, autoUpdate) {
@@ -33,7 +33,7 @@ class TaskAdapter(
         val task: Task = taskList?.get(position) ?: return
 
         holder.container.setOnClickListener{//追加
-            listener.onItemClick(task)
+            listener.onItemLongClick(task)
         }
 
         //holder.imageView.setImageResource(task.imageId)
@@ -57,8 +57,8 @@ class TaskAdapter(
         val dateTextView: TextView = view.dateTextView
     }
     //追加
-    interface OnItemClickListener {
-        fun onItemClick(item: Task)
+    interface OnItemLongClickListener {
+        fun onItemLongClick(item: Task)
     }
 
 }

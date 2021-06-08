@@ -32,8 +32,6 @@ class CustomDialogFragment:DialogFragment() {
             dismiss()
             //テキストビューに選択した曜日を表示
 
-
-
         }
 
         return rootView

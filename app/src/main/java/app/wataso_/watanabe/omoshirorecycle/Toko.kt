@@ -99,18 +99,6 @@ class Toko : AppCompatActivity() {
 
         }
     }
-    fun createDummyData() {
-        create(R.drawable.ic_launcher_background, "","")
 
-    }
-    //以下はtaskリサイクルヴューの記述
-    fun create(imageId: Int, content: String,title: String) {
-        realm.executeTransaction {
-            val task = it.createObject(Task::class.java, UUID.randomUUID().toString())
-            task.imageId = imageId
-            task.content = content
-            task.title =title
-        }
-    }
 
 }
