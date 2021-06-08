@@ -30,7 +30,6 @@ class Toko : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.toko)
-        createDummyData()
 
         //edittextに取得したデータを入れる
 
@@ -38,6 +37,8 @@ class Toko : AppCompatActivity() {
             val title: String = genre_textView.text.toString()
             val content: String = contentEditText.text.toString()
             save(title,content)
+            val toMainActivityIntent = Intent(this,MainActivity::class.java)
+            startActivity(toMainActivityIntent)
         }
 
         //galleryButtonクリック時にギャラリーを開く
@@ -92,7 +93,7 @@ class Toko : AppCompatActivity() {
         val task: Task? = read()
         realm.executeTransaction {
                 //メモの新規作成
-                val newTask: Task = it.createObject(Task::class.java)
+                val newTask: Task = it.createObject(Task::class.java,UUID.randomUUID().toString())
                 newTask.title = title
                 newTask.content = content
 
