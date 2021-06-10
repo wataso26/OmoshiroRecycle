@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="notificaion" translatable="false">
+    <array name="notification" translatable="false">
         <item>@font/archive
         </item>
     </array>

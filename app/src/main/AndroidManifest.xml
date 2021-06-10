@@ -5,9 +5,9 @@
     <application
         android:name=".RealmTodoApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/enpitu"
         android:label="おもしろリサイクル"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/enpitu"
         android:supportsRtl="true"
         android:theme="@style/Theme.OmoshiroRecycle">
         <activity android:name=".Toko" />
@@ -20,7 +20,7 @@
         </activity>
         <meta-data
             android:name="notification"
-            android:resource="@array/notificaion" />
+            android:resource="@array/notification" />
     </application>
 
 </manifest>
