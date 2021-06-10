@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="通知が来る曜日を設定しよう"
+        android:text="芸人一発ギャグ集"
         android:textSize="18dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -28,40 +28,46 @@
         >
 
         <RadioButton
+            android:id="@+id/radio1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="月曜日"
-            />
+            android:text="春日俊彰（オードリー）" />
+
         <RadioButton
+            android:id="@+id/radio2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="火曜日"
-            />
+            android:text="小峠英二（バイキング）" />
+
         <RadioButton
+            android:id="@+id/radio3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="水曜日"
-            />
+            android:text="ゴー☆ジャス" />
+
         <RadioButton
+            android:id="@+id/radio4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="木曜日"
-            />
+            android:text="とにかく明るい安村" />
+
         <RadioButton
+            android:id="@+id/radio5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="金曜日"
-            />
+            android:text="ブルゾンちえみ" />
+
         <RadioButton
+            android:id="@+id/radio6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="土曜日"
-            />
+            android:text="クマムシ" />
+
         <RadioButton
+            android:id="@+id/radio7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="日曜日"
-            />
+            android:text="ダンディ坂野" />
 
     </RadioGroup>
 
@@ -69,25 +75,12 @@
         android:id="@+id/cancel_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="36dp"
         android:backgroundTint="#EC407A"
-        android:text="取り消し"
+        android:text="戻る"
         android:textColor="#ffff"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ratingRadioGroup" />
-
-    <Button
-        android:id="@+id/submitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="25dp"
-        android:backgroundTint="#26C6DA"
-        android:text="確定！"
-        android:textColor="#fff"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingRadioGroup" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

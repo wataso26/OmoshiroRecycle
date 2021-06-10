@@ -16,14 +16,15 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="曜日"
+            android:fontFamily="sans-serif-black"
+            android:text="おまけ"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.167"
+            app:layout_constraintHorizontal_bias="0.14"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.343" />
+            app:layout_constraintVertical_bias="0.636" />
 
         <TextView
             android:id="@+id/main_tv"
@@ -36,32 +37,20 @@
             app:layout_constraintHorizontal_bias="0.087"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.471" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="110dp"
-            android:layout_height="34dp"
-            android:gravity="center"
-            android:text="textView6"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/yobi_ad"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.353" />
+            app:layout_constraintVertical_bias="0.4" />
 
         <Button
             android:id="@+id/yobi_ad"
-            android:layout_width="116dp"
-            android:layout_height="42dp"
+            android:layout_width="135dp"
+            android:layout_height="59dp"
+            android:backgroundTint="#E328C4"
             android:text="クリック！"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.44"
+            app:layout_constraintHorizontal_bias="0.532"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.354" />
+            app:layout_constraintVertical_bias="0.656" />
 
         <TextView
             android:id="@+id/tuchi"
@@ -74,7 +63,7 @@
             app:layout_constraintHorizontal_bias="0.167"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.251" />
+            app:layout_constraintVertical_bias="0.264" />
 
         <Switch
             android:id="@+id/switch1"
@@ -111,7 +100,7 @@
             app:layout_constraintHorizontal_bias="0.44"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.481" />
+            app:layout_constraintVertical_bias="0.409" />
 
         <TextView
             android:id="@+id/textView5"
@@ -121,10 +110,10 @@
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.91"
+            app:layout_constraintHorizontal_bias="0.917"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.479" />
+            app:layout_constraintVertical_bias="0.407" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

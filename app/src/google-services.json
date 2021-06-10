@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "10650606528",
+    "project_id": "test-71f4e",
+    "storage_bucket": "test-71f4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:10650606528:android:17c98f9a03fc592a484625",
+        "android_client_info": {
+          "package_name": "app.wataso_.watanabe.omoshirorecycle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "10650606528-qf7g4sbj6a0avcfnq2e6ehgaia746ic0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.wataso_.watanabe.omoshirorecycle",
+            "certificate_hash": "cb27af4214321a86d3d48c355e5277c49fe6e2a3"
+          }
+        },
+        {
+          "client_id": "10650606528-4ktsor4n86o4jo8f7bnnblb0fo7rn578.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK6cHG94dV9UDg8asu9yjLY0i5ZFU2DHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "10650606528-4ktsor4n86o4jo8f7bnnblb0fo7rn578.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

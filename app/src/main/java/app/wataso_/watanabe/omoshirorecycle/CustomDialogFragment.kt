@@ -21,17 +21,26 @@ class CustomDialogFragment:DialogFragment() {
         rootView.cancel_button.setOnClickListener {
             dismiss()
         }
-        rootView.submitButton.setOnClickListener {
-            val selectedID =ratingRadioGroup.checkedRadioButtonId
-            val radio = rootView.findViewById<RadioButton>(selectedID)
-
-            var ratingResult = radio.text.toString()
-
-            Toast.makeText(context,"You chose $ratingResult",Toast.LENGTH_LONG).show()
-
-            dismiss()
-            //テキストビューに選択した曜日を表示
-
+        rootView.radio1.setOnClickListener{
+            Toast.makeText(context,"トゥース！",Toast.LENGTH_SHORT).show()
+        }
+        rootView.radio2.setOnClickListener{
+            Toast.makeText(context,"なんて日だ",Toast.LENGTH_SHORT).show()
+        }
+        rootView.radio3.setOnClickListener{
+            Toast.makeText(context,"君のハートにレボリューション★",Toast.LENGTH_SHORT).show()
+        }
+        rootView.radio4.setOnClickListener{
+            Toast.makeText(context,"安心してください、履いてますよ",Toast.LENGTH_SHORT).show()
+        }
+        rootView.radio5.setOnClickListener{
+            Toast.makeText(context,"35億",Toast.LENGTH_SHORT).show()
+        }
+        rootView.radio6.setOnClickListener{
+            Toast.makeText(context,"あったかいん～だから～",Toast.LENGTH_SHORT).show()
+        }
+        rootView.radio7.setOnClickListener{
+            Toast.makeText(context,"ゲッツ",Toast.LENGTH_SHORT).show()
         }
 
         return rootView

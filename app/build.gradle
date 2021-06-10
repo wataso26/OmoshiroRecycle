@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'//realm初期設定の為使用(roomの使用の為)
     id 'realm-android'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -14,8 +15,8 @@ android {
         applicationId "app.wataso_.watanabe.omoshirorecycle"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -38,6 +39,9 @@ android {
 }
 
 dependencies {
+    implementation platform('com.google.firebase:firebase-bom:28.1.0')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation 'com.google.firebase:firebase-messaging:18.0.0'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.5.0'

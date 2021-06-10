@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         //テレビボタンを押した時
         button2.setOnClickListener {
             val book = realm.where(Task::class.java)
-                    .equalTo("title","テレビ・コント")
+                    .equalTo("title","テレビ")
                     .findAll()
             val tvadapter =
                     TaskAdapter(this, book, object: TaskAdapter.OnItemLongClickListener {
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
         }
         button4.setOnClickListener {
             val book = realm.where(Task::class.java)
-                    .equalTo("title","写真で一言")
+                    .equalTo("title","コント")
                     .findAll()
             val pictureadapter =
                     TaskAdapter(this, book, object: TaskAdapter.OnItemLongClickListener {
@@ -174,14 +174,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //以下はtaskリサイクルヴューの記述
-    fun create(imageId: Int, content: String,title: String) {
-        realm.executeTransaction {
-            val task = it.createObject(Task::class.java, UUID.randomUUID().toString())
-            task.imageId = imageId
-            task.content = content
-            task.title =title
-        }
-    }
+
 
     fun readAll(): RealmResults<Task> {
         return realm.where(Task::class.java).findAll().sort("createdAt", Sort.ASCENDING)

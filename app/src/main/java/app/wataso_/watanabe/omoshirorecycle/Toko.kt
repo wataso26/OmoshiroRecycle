@@ -54,7 +54,7 @@ class Toko : AppCompatActivity() {
         genre_ad = findViewById<Button>(R.id.genre_ad)
         //genreAlertDialogがボタンが押された時に表示されるようにする
         genre_ad.setOnClickListener {
-            val strList = arrayOf("日常","テレビ・コント","フレーズ","写真で一言","フリースタイル")
+            val strList = arrayOf("日常","テレビ","フレーズ","コント","フリースタイル")
 
             AlertDialog.Builder(this) // FragmentではActivityを取得して生成
                     .setTitle("ラジオボタン選択ダイアログ")
