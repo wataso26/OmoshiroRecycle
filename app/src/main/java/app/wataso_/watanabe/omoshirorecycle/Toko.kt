@@ -2,6 +2,7 @@ package app.wataso_.watanabe.omoshirorecycle
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.icu.text.CaseMap
 import androidx.appcompat.app.AppCompatActivity
@@ -31,8 +32,15 @@ class Toko : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.toko)
 
-        //edittextに取得したデータを入れる
+        val shr = getSharedPreferences("beginner", Context.MODE_PRIVATE)
+        val editor=shr.edit()
+        var Number=shr.getInt("number",0)
+        if(Number==0){
+            editor.putInt("number",1)
+            editor.apply()
+        }
 
+        //edittextに取得したデータを入れる
         saveButton.setOnClickListener {
             val title: String = genre_textView.text.toString()
             val content: String = contentEditText.text.toString()

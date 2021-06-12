@@ -3,8 +3,6 @@ package app.wataso_.watanabe.omoshirorecycle
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.sabu.*
-import kotlinx.android.synthetic.main.setting.*
 
 class SubuSetting : AppCompatActivity() {
 

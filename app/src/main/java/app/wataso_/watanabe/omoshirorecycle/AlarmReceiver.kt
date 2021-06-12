@@ -1,6 +1,7 @@
 package app.wataso_.watanabe.omoshirorecycle
 
 import android.R
+import android.app.LauncherActivity.ListItem
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -14,24 +15,22 @@ import androidx.core.app.NotificationCompat
 class AlarmReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
 
-        // Get id & message
+        // Get id
         val notificationId = intent.getIntExtra("notificationId", 0)
-
-        // Call MainActivity when notification is tapped.
         val mainIntent = Intent(context, TimePickerDialogActivity::class.java)
         val contentIntent = PendingIntent.getActivity(context, 0, mainIntent, 0)
 
-        // NotificationManager
+        // 通知マネジャー
         val notificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            // For API 26 and above
+
             val channelName: CharSequence = "My Notification"
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val channel = NotificationChannel(CHANNEL_ID, channelName, importance)
             notificationManager.createNotificationChannel(channel)
         }
 
-        // Prepare Notification
+        // 内容
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_dialog_info)
                 .setContentTitle("元気ですか！")
@@ -40,11 +39,13 @@ class AlarmReceiver : BroadcastReceiver() {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setAutoCancel(true)
 
-        // Notify
+        // 通知をセットする
         notificationManager.notify(notificationId, builder.build())
+
     }
 
     companion object {
         private const val CHANNEL_ID = "CHANNEL_SAMPLE"
     }
+
 }

@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.DialogFragment
-import kotlinx.android.synthetic.main.franment_custom_dialog.*
 import kotlinx.android.synthetic.main.franment_custom_dialog.view.*
 import kotlinx.android.synthetic.main.setting.*
 import org.w3c.dom.Text

@@ -1,5 +1,7 @@
 package app.wataso_.watanabe.omoshirorecycle
+import android.app.AlertDialog
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.Intent
 import android.icu.text.CaseMap
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +31,25 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //最初の使い方の案内を作りたい
+        val shr = getSharedPreferences("beginner", Context.MODE_PRIVATE)
+        var Number=shr.getInt("number",0)
+        if (Number==0){
+            //  editor.putInt("number",0).apply()
+            AlertDialog.Builder(this) // FragmentではActivityを取得して生成
+                    .setMessage("右下のボタンから、保存できます！")
+                    .setPositiveButton("やってみる", { dialog, which ->
+                    })
+                    .show()
+            AlertDialog.Builder(this) // FragmentではActivityを取得して生成
+                    .setMessage("このアプリに、\n面白かった事を保存していきましょう！")
+                    .setPositiveButton("次へ", { dialog, which ->
+                    })
+                    .show()
+
+
+        }
 
         //以下12行はtaskのリサイクラビュー
         val taskList = readAll()
@@ -153,7 +174,6 @@ class MainActivity : AppCompatActivity() {
     //オーバーフローメニューを押した時に画面が遷移する
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        var returnVal = true
         val toSettingActivityIntent = Intent(this,TimePickerDialogActivity::class.java)
         val toSubuSettingIntent = Intent(this,SubuSetting::class.java)
 

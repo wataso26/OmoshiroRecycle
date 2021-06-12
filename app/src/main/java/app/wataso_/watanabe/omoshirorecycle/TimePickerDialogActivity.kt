@@ -49,11 +49,11 @@ class TimePickerDialogActivity : AppCompatActivity(), View.OnClickListener {
 
                 // アラームをセットする
                 alarmManager[AlarmManager.RTC_WAKEUP, alarmStartTime] = pendingIntent
-                Toast.makeText(this, "Done!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "設定しました", Toast.LENGTH_SHORT).show()
             }
             R.id.とりけし -> {
                 alarmManager.cancel(pendingIntent)
-                Toast.makeText(this, "Canceled.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "取り消しました", Toast.LENGTH_SHORT).show()
             }
         }
     }

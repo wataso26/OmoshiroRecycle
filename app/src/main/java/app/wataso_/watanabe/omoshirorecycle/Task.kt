@@ -1,6 +1,5 @@
 package app.wataso_.watanabe.omoshirorecycle
 
-import android.icu.text.CaseMap
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 import java.util.*
