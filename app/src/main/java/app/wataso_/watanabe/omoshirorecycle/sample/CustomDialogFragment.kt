@@ -1,4 +1,4 @@
-package app.wataso_.watanabe.omoshirorecycle
+package app.wataso_.watanabe.omoshirorecycle.sample
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.DialogFragment
+import app.wataso_.watanabe.omoshirorecycle.R
 import kotlinx.android.synthetic.main.phrase_custom_dialog.view.*
-import kotlinx.android.synthetic.main.setting.*
-import org.w3c.dom.Text
 
 class CustomDialogFragment:DialogFragment() {
 

@@ -37,12 +37,12 @@ class MainActivity : AppCompatActivity() {
         var Number1=shr.getInt("number",0)
         if (Number1==0){
 
-            AlertDialog.Builder(this) // FragmentではActivityを取得して生成
+            AlertDialog.Builder(this)
                     .setMessage("右下のボタンから、保存できます！")
                     .setPositiveButton("やってみる", { dialog, which ->
                     })
                     .show()
-            AlertDialog.Builder(this) // FragmentではActivityを取得して生成
+            AlertDialog.Builder(this)
                     .setMessage("このアプリに、\n面白かった事を保存していきましょう！")
                     .setPositiveButton("次へ", { dialog, which ->
                     })
