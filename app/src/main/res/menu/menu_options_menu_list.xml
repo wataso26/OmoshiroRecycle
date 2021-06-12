@@ -6,7 +6,11 @@
     <item
         android:id="@+id/MenuSetting"
         android:icon="@android:drawable/ic_menu_manage"
-        android:title="設定"
-        app:showAsAction="always" />
+        android:title="通知"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/SubuSetting"
+        android:title="おまけ"
+        app:showAsAction="never" />
 
 </menu>

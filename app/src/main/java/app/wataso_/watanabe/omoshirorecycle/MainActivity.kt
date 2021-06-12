@@ -22,9 +22,6 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-    //realmの定義
-
-
     //realm
     val realm:Realm =Realm.getDefaultInstance()
 
@@ -35,7 +32,6 @@ class MainActivity : AppCompatActivity() {
 
         //以下12行はtaskのリサイクラビュー
         val taskList = readAll()
-
 
         val adapter =
             TaskAdapter(this, taskList, object : TaskAdapter.OnItemLongClickListener {
@@ -56,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             val toTokoActivityIntent = Intent(this,Toko::class.java)
             startActivity(toTokoActivityIntent)
         }
+        //以下ジャンル分けの機能
         //一覧ボタンを押した時
         button.setOnClickListener {
             val taskList = readAll()
@@ -158,12 +155,14 @@ class MainActivity : AppCompatActivity() {
 
         var returnVal = true
         val toSettingActivityIntent = Intent(this,TimePickerDialogActivity::class.java)
+        val toSubuSettingIntent = Intent(this,SubuSetting::class.java)
 
         when(item.itemId){
             R.id.MenuSetting->
-
                 startActivity(toSettingActivityIntent)
 
+            R.id.SubuSetting->
+                startActivity(toSubuSettingIntent)
         }
         return super.onOptionsItemSelected(item);
     }
@@ -174,8 +173,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     //以下はtaskリサイクルヴューの記述
-
-
     fun readAll(): RealmResults<Task> {
         return realm.where(Task::class.java).findAll().sort("createdAt", Sort.ASCENDING)
     }
