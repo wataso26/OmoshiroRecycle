@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.DialogFragment
-import kotlinx.android.synthetic.main.franment_custom_dialog.view.*
+import kotlinx.android.synthetic.main.phrase_custom_dialog.view.*
 import kotlinx.android.synthetic.main.setting.*
 import org.w3c.dom.Text
 
@@ -14,7 +14,7 @@ class CustomDialogFragment:DialogFragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var rootView: View = inflater.inflate(R.layout.franment_custom_dialog,container,false)
+        var rootView: View = inflater.inflate(R.layout.phrase_custom_dialog,container,false)
 
 
         rootView.cancel_button.setOnClickListener {

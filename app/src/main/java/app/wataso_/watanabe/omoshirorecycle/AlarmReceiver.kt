@@ -33,7 +33,7 @@ class AlarmReceiver : BroadcastReceiver() {
         // 内容
         val builder = NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_dialog_info)
-                .setContentTitle("元気ですか！")
+                .setContentTitle("お元気ですか?")
                 .setContentText("過去の面白かった事を振り返ってみませんか？")
                 .setContentIntent(contentIntent)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)

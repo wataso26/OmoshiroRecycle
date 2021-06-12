@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
 
         //最初の使い方の案内
         val shr = getSharedPreferences("beginner", Context.MODE_PRIVATE)
-        var Number=shr.getInt("number",0)
-        if (Number==0){
-            //  editor.putInt("number",0).apply()
+        var Number1=shr.getInt("number",0)
+        if (Number1==0){
+
             AlertDialog.Builder(this) // FragmentではActivityを取得して生成
                     .setMessage("右下のボタンから、保存できます！")
                     .setPositiveButton("やってみる", { dialog, which ->
@@ -47,7 +47,13 @@ class MainActivity : AppCompatActivity() {
                     .setPositiveButton("次へ", { dialog, which ->
                     })
                     .show()
-
+        }
+        //最初の説明の解除
+        val editor=shr.edit()
+        var Number2=shr.getInt("number",0)
+        if(Number2==0){
+            editor.putInt("number",1)
+            editor.apply()
         }
 
         //以下12行はtaskのリサイクラビュー

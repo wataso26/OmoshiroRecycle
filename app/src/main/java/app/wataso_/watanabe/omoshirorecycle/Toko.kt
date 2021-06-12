@@ -1,24 +1,17 @@
 package app.wataso_.watanabe.omoshirorecycle
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
-import android.icu.text.CaseMap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import androidx.recyclerview.widget.LinearLayoutManager
 import io.realm.Realm
-import io.realm.RealmResults
-import io.realm.Sort
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toko.*
 import java.util.*
 
 class Toko : AppCompatActivity() {
-
-
 
     //realmの追加
     val realm:Realm =Realm.getDefaultInstance()
@@ -32,12 +25,26 @@ class Toko : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.toko)
 
+        //最初の説明の解除
         val shr = getSharedPreferences("beginner", Context.MODE_PRIVATE)
         val editor=shr.edit()
-        var Number=shr.getInt("number",0)
-        if(Number==0){
+        var Number1=shr.getInt("number",0)
+        if(Number1==0){
             editor.putInt("number",1)
             editor.apply()
+        }
+        //最初の使い方の案内
+        val shr2 = getSharedPreferences("beginner2", Context.MODE_PRIVATE)
+        var Number2=shr2.getInt("number2",0)
+        if (Number2==0){
+
+            AlertDialog.Builder(this) // FragmentではActivityを取得して生成
+                    .setTitle("保存方法")
+                    .setMessage("5つジャンルから選択して、\n内容を入力しよう！")
+                    .setPositiveButton("やってみる", { dialog, which ->
+                    })
+                    .show()
+
         }
 
         //edittextに取得したデータを入れる
@@ -47,17 +54,24 @@ class Toko : AppCompatActivity() {
             save(title,content)
             val toMainActivityIntent = Intent(this,MainActivity::class.java)
             startActivity(toMainActivityIntent)
+
+            val editor=shr2.edit()
+            var Number2=shr2.getInt("number2",0)
+            if(Number2==0){
+                editor.putInt("number2",1)
+                editor.apply()
+            }
         }
 
-        //galleryButtonクリック時にギャラリーを開く
-        galleryButton.setOnClickListener {
-            val galleryIntent = Intent(Intent.ACTION_OPEN_DOCUMENT)
-            galleryIntent.addCategory(Intent.CATEGORY_OPENABLE)
+        //galleryButtonクリック時にギャラリーを開く（保留）
+        //galleryButton.setOnClickListener {
+            //val galleryIntent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+            //galleryIntent.addCategory(Intent.CATEGORY_OPENABLE)
             //タイプを指定している
-            galleryIntent.type = "image/*"
-            startActivityForResult(galleryIntent, readRequestCode)
+           // galleryIntent.type = "image/*"
+            //startActivityForResult(galleryIntent, readRequestCode)
 
-        }
+        //}
         //genreAlertDialogの設定
         genre_ad = findViewById<Button>(R.id.genre_ad)
         //genreAlertDialogがボタンが押された時に表示されるようにする
@@ -76,19 +90,18 @@ class Toko : AppCompatActivity() {
         }
 
     }
-    //遷移先のアクティビティから結果を受け取る 画像取得
-    override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
-        super.onActivityResult(requestCode, resultCode, resultData)
+    //遷移先のアクティビティから結果を受け取る 画像取得 （保留）
+    //override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
+    //    super.onActivityResult(requestCode, resultCode, resultData)
 
-        if (requestCode == readRequestCode && resultCode == Activity.RESULT_OK){
-            resultData?.data.also{ uri ->
-                imageView.setImageURI(uri)
+    //    if (requestCode == readRequestCode && resultCode == Activity.RESULT_OK){
+      //      resultData?.data.also{ uri ->
+                //imageView.setImageURI(uri)
 
-                val photo= imageView.setImageURI(uri)
-
-            }
-        }
-    }
+                //val photo= imageView.setImageURI(uri)
+     //       }
+     //   }
+    //}
     //realm画面終了時
     override fun onDestroy() {
         super.onDestroy()

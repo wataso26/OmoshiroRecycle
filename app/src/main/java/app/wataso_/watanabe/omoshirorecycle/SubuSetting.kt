@@ -12,7 +12,7 @@ class SubuSetting : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.sabu)
 
-        yobi_ad = findViewById<Button>(R.id.yobi_ad)
+        yobi_ad = findViewById<Button>(R.id.SubuSetting)
 
         //yobi_adがクリックされた時にアラートダイアログが出るようにする
         yobi_ad.setOnClickListener {
