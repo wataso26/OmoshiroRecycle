@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //最初の使い方の案内を作りたい
+        //最初の使い方の案内
         val shr = getSharedPreferences("beginner", Context.MODE_PRIVATE)
         var Number=shr.getInt("number",0)
         if (Number==0){
@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity() {
                     .setPositiveButton("次へ", { dialog, which ->
                     })
                     .show()
-
 
         }
 

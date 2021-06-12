@@ -84,6 +84,8 @@ class Toko : AppCompatActivity() {
             resultData?.data.also{ uri ->
                 imageView.setImageURI(uri)
 
+                val photo= imageView.setImageURI(uri)
+
             }
         }
     }
