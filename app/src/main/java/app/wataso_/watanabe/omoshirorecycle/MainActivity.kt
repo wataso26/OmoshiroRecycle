@@ -38,15 +38,21 @@ class MainActivity : AppCompatActivity() {
         if (Number1==0){
 
             AlertDialog.Builder(this)
-                    .setMessage("右下のボタンから、保存できます！")
+                    .setMessage("保存は、右下のボタンから出来ます！")
                     .setPositiveButton("やってみる", { dialog, which ->
                     })
                     .show()
             AlertDialog.Builder(this)
-                    .setMessage("このアプリに、\n面白かった事を保存していきましょう！")
+                    .setMessage("ジャンル分けの例は\n右上にあります")
                     .setPositiveButton("次へ", { dialog, which ->
                     })
                     .show()
+            AlertDialog.Builder(this)
+                    .setMessage("このアプリに、\n過去の面白かった事を保存していきましょう！")
+                    .setPositiveButton("次へ", { dialog, which ->
+                    })
+                    .show()
+
         }
         //最初の説明の解除
         val editor=shr.edit()
@@ -63,8 +69,17 @@ class MainActivity : AppCompatActivity() {
             TaskAdapter(this, taskList, object : TaskAdapter.OnItemLongClickListener {
                 override fun  onItemLongClick(item: Task) {
                     // クリック時の処理
-                    Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
-                    delete(item.id)
+                    AlertDialog.Builder(this@MainActivity)
+                            .setMessage("削除しますか？")
+                            .setPositiveButton("YES", { dialog, which ->
+                                Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
+                                delete(item.id)
+                            })
+                            .setNegativeButton("No",{dialog,which ->
+                            })
+                            .show()
+
+
                 }
             }, true)
 
@@ -87,9 +102,15 @@ class MainActivity : AppCompatActivity() {
             val adapter =
                     TaskAdapter(this, taskList, object : TaskAdapter.OnItemLongClickListener {
                         override fun  onItemLongClick(item: Task) {
-                            // クリック時の処理
-                            Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
-                            delete(item.id)
+                            AlertDialog.Builder(this@MainActivity)
+                                    .setMessage("削除しますか？")
+                                    .setPositiveButton("YES", { dialog, which ->
+                                        Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
+                                        delete(item.id)
+                                    })
+                                    .setNegativeButton("No",{dialog,which ->
+                                    })
+                                    .show()
                         }
                     }, true)
             recyclerView.adapter = adapter
@@ -104,9 +125,15 @@ class MainActivity : AppCompatActivity() {
             val nichijoadapter =
                     TaskAdapter(this, book, object: TaskAdapter.OnItemLongClickListener {
                         override fun onItemLongClick(item: Task) {
-                            // クリック時の処理
-                            Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
-                            delete(item.id)
+                            AlertDialog.Builder(this@MainActivity)
+                                    .setMessage("削除しますか？")
+                                    .setPositiveButton("YES", { dialog, which ->
+                                        Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
+                                        delete(item.id)
+                                    })
+                                    .setNegativeButton("No",{dialog,which ->
+                                    })
+                                    .show()
                         }
                     }, true)
             recyclerView.adapter=nichijoadapter
@@ -121,9 +148,15 @@ class MainActivity : AppCompatActivity() {
             val tvadapter =
                     TaskAdapter(this, book, object: TaskAdapter.OnItemLongClickListener {
                         override fun onItemLongClick(item: Task) {
-                            // クリック時の処理
-                            Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
-                            delete(item.id)
+                            AlertDialog.Builder(this@MainActivity)
+                                    .setMessage("削除しますか？")
+                                    .setPositiveButton("YES", { dialog, which ->
+                                        Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
+                                        delete(item.id)
+                                    })
+                                    .setNegativeButton("No",{dialog,which ->
+                                    })
+                                    .show()
                         }
                     }, true)
             recyclerView.adapter=tvadapter
@@ -136,9 +169,15 @@ class MainActivity : AppCompatActivity() {
             val flaseadapter =
                     TaskAdapter(this, book, object: TaskAdapter.OnItemLongClickListener {
                         override fun onItemLongClick(item: Task) {
-                            // クリック時の処理
-                            Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
-                            delete(item.id)
+                            AlertDialog.Builder(this@MainActivity)
+                                    .setMessage("削除しますか？")
+                                    .setPositiveButton("YES", { dialog, which ->
+                                        Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
+                                        delete(item.id)
+                                    })
+                                    .setNegativeButton("No",{dialog,which ->
+                                    })
+                                    .show()
                         }
                     }, true)
             recyclerView.adapter=flaseadapter
@@ -151,9 +190,15 @@ class MainActivity : AppCompatActivity() {
             val pictureadapter =
                     TaskAdapter(this, book, object: TaskAdapter.OnItemLongClickListener {
                         override fun onItemLongClick(item: Task) {
-                            // クリック時の処理
-                            Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
-                            delete(item.id)
+                            AlertDialog.Builder(this@MainActivity)
+                                    .setMessage("削除しますか？")
+                                    .setPositiveButton("YES", { dialog, which ->
+                                        Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
+                                        delete(item.id)
+                                    })
+                                    .setNegativeButton("No",{dialog,which ->
+                                    })
+                                    .show()
                         }
                     }, true)
             recyclerView.adapter=pictureadapter
@@ -166,9 +211,15 @@ class MainActivity : AppCompatActivity() {
             val freeadapter =
                     TaskAdapter(this, book, object: TaskAdapter.OnItemLongClickListener {
                         override fun onItemLongClick(item: Task) {
-                            // クリック時の処理
-                            Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
-                            delete(item.id)
+                            AlertDialog.Builder(this@MainActivity)
+                                    .setMessage("削除しますか？")
+                                    .setPositiveButton("YES", { dialog, which ->
+                                        Toast.makeText(applicationContext, item.content + "を削除しました", Toast.LENGTH_SHORT).show()
+                                        delete(item.id)
+                                    })
+                                    .setNegativeButton("No",{dialog,which ->
+                                    })
+                                    .show()
                         }
                     }, true)
             recyclerView.adapter=freeadapter
