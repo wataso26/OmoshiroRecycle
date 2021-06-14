@@ -3,6 +3,7 @@ import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.icu.text.CaseMap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     //recyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_OmoshiroRecycle)
         setContentView(R.layout.activity_main)
 
         //最初の使い方の案内
