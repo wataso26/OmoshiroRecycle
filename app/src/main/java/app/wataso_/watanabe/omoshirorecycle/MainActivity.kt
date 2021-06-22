@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     //recyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_OmoshiroRecycle)
         setContentView(R.layout.activity_main)
@@ -227,8 +228,9 @@ class MainActivity : AppCompatActivity() {
             recyclerView.adapter=freeadapter
             Log.d(TAG,book.toString())
         }
-
     }
+
+
     //オーバーフローメニューを押した時に画面が遷移する
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
@@ -261,6 +263,7 @@ class MainActivity : AppCompatActivity() {
                 ?: return@executeTransaction
             task.deleteFromRealm()
         }
+
     }
 }
 

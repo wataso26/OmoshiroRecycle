@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff8dc">
+    android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/textView9"
@@ -27,7 +27,7 @@
         android:layout_width="135dp"
         android:layout_height="59dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="#E328C4"
+        android:backgroundTint="#ffa500"
         android:text="フレーズ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,7 +38,7 @@
         android:layout_width="135dp"
         android:layout_height="59dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="#7DFF0000"
+        android:backgroundTint="#ffa500"
         android:text="フリースタイル"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
         android:layout_width="135dp"
         android:layout_height="59dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="#0000FF"
+        android:backgroundTint="#ffa500"
         android:text="テレビ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
         android:layout_width="135dp"
         android:layout_height="59dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="#7D00FF00"
+        android:backgroundTint="#ffa500"
         android:text="コント"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +71,7 @@
         android:layout_width="135dp"
         android:layout_height="59dp"
         android:layout_marginTop="24dp"
-        android:backgroundTint="#7DFFE100"
+        android:backgroundTint="#ffa500"
         android:text="日常"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

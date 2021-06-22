@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff8dc"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <Button
@@ -18,7 +18,7 @@
         android:text="+"
         android:textColor="#FFFFFF"
         android:textSize="30dp"
-        app:backgroundTint="#22c853"
+        app:backgroundTint="#ffa500"
         app:iconTint="#00B62F2F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -48,7 +48,7 @@
                 android:id="@+id/button6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#7DFFE100"
+                android:backgroundTint="#7DFFA500"
                 android:text="日常"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="97dp" />
@@ -57,7 +57,7 @@
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#7D00FF00"
+                android:backgroundTint="#7DFFA500"
                 android:text="コント"
                 tools:layout_editor_absoluteX="7dp"
                 tools:layout_editor_absoluteY="71dp" />
@@ -66,7 +66,7 @@
                 android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#0000FF"
+                android:backgroundTint="#7DFFA500"
                 android:text="テレビ"
                 tools:layout_editor_absoluteX="29dp"
                 tools:layout_editor_absoluteY="97dp" />
@@ -75,7 +75,7 @@
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#7DE100FF"
+                android:backgroundTint="#7DFFA500"
                 android:text="フレーズ"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="62dp" />
@@ -84,7 +84,7 @@
                 android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#7DFF0000"
+                android:backgroundTint="#7DFFA500"
                 android:text="フリースタイル"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="79dp" />
