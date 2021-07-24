@@ -10,6 +10,7 @@
         android:id="@+id/constraintLayout3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +41,8 @@
 
         <Button
             android:id="@+id/genre_ad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="96dp"
+            android:layout_height="50dp"
             android:layout_marginTop="32dp"
             android:text="選択"
             android:textSize="18dp"
@@ -95,13 +96,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="405dp"
-        android:layout_height="149dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -112,13 +106,15 @@
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="83dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="154dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="72dp"
         android:backgroundTint="#ffa500"
-        android:text="保存"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="投稿"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

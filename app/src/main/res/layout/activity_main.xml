@@ -39,42 +39,48 @@
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
                 android:backgroundTint="#7DFFA500"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
                 android:text="一覧" />
 
             <Button
                 android:id="@+id/button6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
                 android:backgroundTint="#7DFFA500"
+                android:layout_marginRight="10dp"
                 android:text="日常"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="97dp" />
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
                 android:backgroundTint="#7DFFA500"
+                android:layout_marginRight="10dp"
                 android:text="コント"
                 tools:layout_editor_absoluteX="7dp"
                 tools:layout_editor_absoluteY="71dp" />
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
                 android:backgroundTint="#7DFFA500"
+                android:layout_marginRight="10dp"
                 android:text="テレビ"
                 tools:layout_editor_absoluteX="29dp"
                 tools:layout_editor_absoluteY="97dp" />
 
             <Button
                 android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="110dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="10dp"
                 android:backgroundTint="#7DFFA500"
                 android:text="フレーズ"
                 tools:layout_editor_absoluteX="16dp"
@@ -82,12 +88,10 @@
 
             <Button
                 android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:backgroundTint="#7DFFA500"
-                android:text="フリースタイル"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="79dp" />
+                android:text="フリースタイル"/>
 
 
         </LinearLayout>
@@ -102,6 +106,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

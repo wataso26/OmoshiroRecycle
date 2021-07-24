@@ -6,6 +6,12 @@
     android:layout_height="wrap_content"
     android:minHeight="80dp">
 
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
     <LinearLayout
         android:id="@+id/container"
         android:layout_width="0dp"
@@ -17,7 +23,9 @@
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp">
 
         <TextView
             android:id="@+id/genreTextView"
@@ -25,7 +33,8 @@
             android:layout_height="80dp"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="ジャンル" />
+            android:text="ジャンル"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
