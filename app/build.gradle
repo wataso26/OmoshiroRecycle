@@ -15,8 +15,8 @@ android {
         applicationId "app.wataso_.watanabe.omoshirorecycle"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 5
-        versionName "2.02"
+        versionCode 6
+        versionName "2.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
